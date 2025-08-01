@@ -1,5 +1,4 @@
-from collections import Iterable
-
+from collections.abc import Iterable
 import numpy as np
 
 from igibson.utils.python_utils import assert_valid_key
@@ -146,7 +145,11 @@ class BaseController:
                 self.nums2array(command_output_limits[1], self.command_dim),
             )
         )
-        self.inverted = inverted
+        # Ensure inverted is always a boolean
+        if isinstance(inverted, (list, np.ndarray)):
+            self.inverted = bool(inverted[0]) if len(inverted) > 0 else False
+        else:
+            self.inverted = bool(inverted)
 
     def _preprocess_command(self, command):
         """
