@@ -1,3 +1,7 @@
+# EXPLORER
+
+In this fork I just provide a wrapper (very thin) to explore the scenes in the igibson dataset and play arounfd with the Stretch robot config superimposed onto the Turtlebot config to make sure the appropriate height is maintained.
+
 #  iGibson: A Simulation Environment to train Robots in Large Realistic Interactive Scenes
 
 <img src="./docs/images/igibsonlogo.png" width="500"> <img src="./docs/images/igibson.gif" width="250"> 
